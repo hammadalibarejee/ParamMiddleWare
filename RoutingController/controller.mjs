@@ -1,12 +1,12 @@
 import fs from 'fs';
 
 
-modules.exports = getUser= (req,res)=>{
+exports.getUser= (req,res)=>{
     const user=fs.readFile('./../data/user.json');
     res.status(200).send(user);
 }
 
-modules.exports = postUser= (req,res)=>{
+exports.postUser= (req,res)=>{
     if(!req.body.id || !req.body.name || !req.body.email || !req.body.address){
         res.status(400).send('invalid data');
     }
@@ -21,7 +21,7 @@ modules.exports = postUser= (req,res)=>{
 }
  
 
-modules.exports = tUser,postUser;
+// modules.exports = tUser,postUser;
 
 // const deleteUser= (req,res)=>{
 
